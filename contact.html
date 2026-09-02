@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =====================================================
+         BASIC HTML SETTINGS
+         ===================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Madhan's Food - Contact</title>
+
+
+    <!-- =====================================================
+         COMMON CSS FILE
+         ===================================================== -->
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         BLOCK 1 : NAVBAR
+         ===================================================== -->
+
+    <header class="navbar">
+
+
+        <!-- Logo and Website Name -->
+
+        <div class="logo-section">
+
+            <div class="logo">
+                🍔
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Madhan's Food
+                </h2>
+
+                <p>
+                    Ordering Website
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+
+            <a href="menu.html">
+                Menu
+            </a>
+
+
+            <a href="cart.html">
+
+                Cart
+
+                <span id="cartCount">
+                    0
+                </span>
+
+            </a>
+
+
+            <a href="contact.html"
+               class="active">
+
+                Contact
+
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         BLOCK 2 : CONTACT HEADING
+         ===================================================== -->
+
+    <section class="contact-header">
+
+        <h1>
+            Contact Us
+        </h1>
+
+
+        <div class="yellow-line"></div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BLOCK 3 : CONTACT CONTENT
+         ===================================================== -->
+
+    <main class="contact-container">
+
+
+        <!-- =================================================
+             LEFT SIDE : CONTACT INFORMATION
+             ================================================= -->
+
+        <section class="contact-info">
+
+
+            <!-- Address -->
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    📍
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Address
+                    </h3>
+
+                    <p>
+                        123, Food Street,<br>
+                        Chennai, Tamil Nadu - 600001
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Phone -->
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    📞
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Phone
+                    </h3>
+
+                    <p>
+                        +91 98765 43210
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Email -->
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    ✉️
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Email
+                    </h3>
+
+                    <p>
+                        madhansfood@gmail.com
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Opening Hours -->
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    🕐
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Opening Hours
+                    </h3>
+
+                    <p>
+                        Mon - Sun · 09:00 AM - 11:00 PM
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             BLOCK 4 : CONTACT FORM
+             ================================================= -->
+
+        <section class="contact-form">
+
+
+            <!-- Name -->
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Your Name"
+            >
+
+
+            <!-- Email -->
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Your Email"
+            >
+
+
+            <!-- Message -->
+
+            <textarea
+                id="message"
+                placeholder="Your Message">
+            </textarea>
+
+
+            <!-- Send Button -->
+
+            <button
+                type="button"
+                onclick="sendMessage()">
+
+                Send Message
+
+            </button>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         BLOCK 5 : FOOTER
+         ===================================================== -->
+
+    <footer>
+
+        © 2025 Madhan's Food Ordering Website.
+        All Rights Reserved.
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         BLOCK 6 : JAVASCRIPT
+         ===================================================== -->
+
+    <script>
+
+
+        // =================================================
+        // CART COUNT
+        // =================================================
+
+        let cartCount =
+            localStorage.getItem("cartCount");
+
+
+        // If cart count doesn't exist
+
+        if (cartCount === null) {
+
+            cartCount = 0;
+
+        }
+
+
+        // Convert to number
+
+        cartCount = Number(cartCount);
+
+
+        // Display cart count
+
+        document.getElementById("cartCount").innerHTML =
+            cartCount;
+
+
+
+        // =================================================
+        // SEND MESSAGE
+        // =================================================
+
+        function sendMessage() {
+
+
+            // Get name
+
+            let name =
+                document.getElementById("name").value;
+
+
+            // Get email
+
+            let email =
+                document.getElementById("email").value;
+
+
+            // Get message
+
+            let message =
+                document.getElementById("message").value;
+
+
+            // Check empty fields
+
+            if (
+                name === "" ||
+                email === "" ||
+                message === ""
+            ) {
+
+                alert("Please fill all fields.");
+
+                return;
+
+            }
+
+
+            // Show success message
+
+            alert(
+                "Thank you " +
+                name +
+                "! Your message has been sent."
+            );
+
+
+            // Clear form
+
+            document.getElementById("name").value = "";
+
+            document.getElementById("email").value = "";
+
+            document.getElementById("message").value = "";
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

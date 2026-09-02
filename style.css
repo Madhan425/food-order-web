@@ -1,0 +1,2193 @@
+/* =====================================================
+   GENERAL / RESET
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    color: #111111;
+}
+
+
+/* =====================================================
+   NAVBAR BLOCK
+   ===================================================== */
+
+.navbar {
+    height: 70px;
+
+    background-color: #151515;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 55px;
+
+    color: white;
+}
+
+
+/* ---------- Logo Section ---------- */
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+/* Burger Logo */
+
+.logo {
+    font-size: 32px;
+    line-height: 1;
+}
+
+
+/* Website Name */
+
+.logo-section h2 {
+    color: #ffc400;
+
+    font-size: 17px;
+
+    margin-bottom: 4px;
+}
+
+
+/* Website Subtitle */
+
+.logo-section p {
+    color: white;
+
+    font-size: 12px;
+}
+
+
+/* ---------- Navigation ---------- */
+
+nav {
+    display: flex;
+    align-items: center;
+
+    gap: 35px;
+}
+
+
+nav a {
+    position: relative;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    padding: 25px 5px;
+
+    transition: 0.3s;
+}
+
+
+/* Hover */
+
+nav a:hover {
+    color: #ffc400;
+}
+
+
+/* Active Home */
+
+nav a.active {
+    color: #ffc400;
+}
+
+
+/* Yellow line below Home */
+
+nav a.active::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 16px;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background-color: #ffc400;
+}
+
+
+/* =====================================================
+   CART COUNT BLOCK
+   ===================================================== */
+
+#cartCount {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 19px;
+    height: 19px;
+
+    margin-left: 3px;
+
+    background-color: #f52232;
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 11px;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   HERO BLOCK
+   ===================================================== */
+
+.hero {
+
+    min-height: 340px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+
+    position: relative;
+
+    background-image:
+        linear-gradient(
+            rgba(20, 20, 20, 0.72),
+            rgba(20, 20, 20, 0.72)
+        ),
+        url("https://images.unsplash.com/photo-1504674900247-0877df9cc836");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+}
+
+
+/* ---------- Hero Content ---------- */
+
+.hero-content {
+
+    width: 100%;
+
+    max-width: 700px;
+
+    padding: 30px 20px;
+}
+
+
+/* Welcome Text */
+
+.hero h3 {
+
+    font-size: 27px;
+
+    font-weight: bold;
+
+    margin-bottom: 5px;
+}
+
+
+/* Madhan's Food */
+
+.hero h1 {
+
+    color: #ffc400;
+
+    font-size: 38px;
+
+    font-weight: bold;
+
+    margin-bottom: 5px;
+}
+
+
+/* Ordering Website */
+
+.hero h2 {
+
+    color: white;
+
+    font-size: 34px;
+
+    font-weight: bold;
+
+    margin-bottom: 18px;
+}
+
+
+/* Description */
+
+.hero p {
+
+    color: white;
+
+    font-size: 15px;
+
+    margin-bottom: 28px;
+}
+
+
+/* =====================================================
+   ORDER NOW BUTTON BLOCK
+   ===================================================== */
+
+.hero button {
+
+    background-color: #ffc400;
+
+    color: #111111;
+
+    border: none;
+
+    padding: 12px 22px;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+
+/* Button Hover */
+
+.hero button:hover {
+
+    background-color: #e5aa00;
+
+    transform: scale(1.05);
+}
+
+
+/* Button Click */
+
+.hero button:active {
+
+    transform: scale(0.98);
+}
+
+
+/* =====================================================
+   FEATURES BLOCK
+   ===================================================== */
+
+.features {
+
+    width: 80%;
+
+    min-height: 90px;
+
+    margin: -25px auto 50px;
+
+    background-color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-around;
+
+    gap: 30px;
+
+    padding: 25px 20px;
+
+    border-radius: 8px;
+
+    position: relative;
+
+    z-index: 2;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ---------- Individual Feature ---------- */
+
+.feature {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 200px;
+}
+
+
+/* Feature Icon */
+
+.feature-icon {
+
+    font-size: 30px;
+
+    width: 40px;
+
+    text-align: center;
+}
+
+
+/* Feature Heading */
+
+.feature h3 {
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 5px;
+}
+
+
+/* Feature Description */
+
+.feature p {
+
+    font-size: 12px;
+
+    color: #555555;
+}
+
+
+/* =====================================================
+   FOOTER BLOCK
+   ===================================================== */
+
+footer {
+
+    background-color: #151515;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 15px;
+
+    font-size: 13px;
+
+    width: 100%;
+}
+
+
+/* =====================================================
+   MOBILE RESPONSIVE DESIGN
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+
+    /* ---------- Navbar ---------- */
+
+    .navbar {
+
+        height: auto;
+
+        min-height: 70px;
+
+        padding: 12px 15px;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+
+    /* ---------- Logo ---------- */
+
+    .logo-section {
+
+        width: 100%;
+
+        justify-content: center;
+    }
+
+
+    /* ---------- Navigation ---------- */
+
+    nav {
+
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+
+    nav a {
+
+        font-size: 12px;
+
+        padding: 10px 3px;
+    }
+
+
+    nav a.active::after {
+
+        bottom: 4px;
+    }
+
+
+    /* ---------- Hero ---------- */
+
+    .hero {
+
+        min-height: 380px;
+    }
+
+
+    .hero-content {
+
+        padding: 20px;
+    }
+
+
+    .hero h3 {
+
+        font-size: 23px;
+    }
+
+
+    .hero h1 {
+
+        font-size: 30px;
+    }
+
+
+    .hero h2 {
+
+        font-size: 26px;
+    }
+
+
+    .hero p {
+
+        font-size: 14px;
+    }
+
+
+    /* ---------- Features ---------- */
+
+    .features {
+
+        width: 90%;
+
+        margin-top: -20px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+
+        padding: 25px;
+    }
+
+
+    .feature {
+
+        width: 100%;
+    }
+
+
+    /* ---------- Footer ---------- */
+
+    footer {
+
+        font-size: 11px;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE DEVICES
+   ===================================================== */
+
+@media (max-width: 400px) {
+
+
+    .logo-section h2 {
+
+        font-size: 15px;
+    }
+
+
+    .logo-section p {
+
+        font-size: 10px;
+    }
+
+
+    nav {
+
+        gap: 8px;
+    }
+
+
+    nav a {
+
+        font-size: 11px;
+    }
+
+
+    .hero h3 {
+
+        font-size: 20px;
+    }
+
+
+    .hero h1 {
+
+        font-size: 27px;
+    }
+
+
+    .hero h2 {
+
+        font-size: 23px;
+    }
+
+
+    .hero p {
+
+        font-size: 13px;
+    }
+
+
+    .hero button {
+
+        padding: 11px 18px;
+
+        font-size: 13px;
+    }
+
+
+    .features {
+
+        width: 92%;
+    }
+}
+/* =====================================================
+   GENERAL
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    color: #111111;
+}
+
+
+/* =====================================================
+   BLOCK 1 : NAVBAR
+   ===================================================== */
+
+.navbar {
+    height: 70px;
+
+    background-color: #151515;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 55px;
+
+    color: white;
+}
+
+
+/* ---------- Logo Section ---------- */
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+/* Burger Logo */
+
+.logo {
+    font-size: 32px;
+    line-height: 1;
+}
+
+
+/* Website Name */
+
+.logo-section h2 {
+    color: #ffc400;
+
+    font-size: 17px;
+
+    margin-bottom: 4px;
+}
+
+
+/* Website Subtitle */
+
+.logo-section p {
+    color: white;
+
+    font-size: 12px;
+}
+
+
+/* ---------- Navigation ---------- */
+
+nav {
+    display: flex;
+    align-items: center;
+
+    gap: 35px;
+}
+
+
+nav a {
+    position: relative;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    padding: 25px 5px;
+
+    transition: 0.3s;
+}
+
+
+/* Navigation Hover */
+
+nav a:hover {
+    color: #ffc400;
+}
+
+
+/* Active Menu */
+
+nav a.active {
+    color: #ffc400;
+}
+
+
+/* Yellow line below active page */
+
+nav a.active::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 16px;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background-color: #ffc400;
+}
+
+
+/* =====================================================
+   BLOCK 2 : CART COUNT
+   ===================================================== */
+
+#cartCount {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 19px;
+    height: 19px;
+
+    margin-left: 3px;
+
+    background-color: #f52232;
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 11px;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   BLOCK 3 : MENU HEADING
+   ===================================================== */
+
+.menu-header {
+    text-align: center;
+
+    padding-top: 18px;
+    padding-bottom: 8px;
+}
+
+
+.menu-header h1 {
+    font-size: 25px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+
+/* Yellow line */
+
+.yellow-line {
+    width: 32px;
+    height: 3px;
+
+    background-color: #ffc400;
+
+    margin: auto;
+
+    border-radius: 5px;
+}
+
+
+/* =====================================================
+   BLOCK 4 : SEARCH + CATEGORY
+   ===================================================== */
+
+.filters {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 10px auto 15px;
+}
+
+
+/* ---------- Search Box ---------- */
+
+.search-box {
+    width: 220px;
+    height: 32px;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 5px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 10px;
+
+    background-color: white;
+}
+
+
+.search-box input {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    font-size: 11px;
+}
+
+
+.search-box span {
+    font-size: 13px;
+}
+
+
+/* ---------- Category Dropdown ---------- */
+
+#categoryFilter {
+    width: 150px;
+    height: 32px;
+
+    padding: 0 8px;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 5px;
+
+    background-color: white;
+
+    outline: none;
+
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   BLOCK 5 : FOOD CONTAINER
+   ===================================================== */
+
+.food-container {
+    width: 80%;
+
+    margin: 0 auto 40px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 14px;
+}
+
+
+/* =====================================================
+   BLOCK 6 : FOOD CARD
+   ===================================================== */
+
+.food-card {
+    min-height: 170px;
+
+    background-color: white;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 7px;
+
+    padding: 7px;
+
+    text-align: center;
+
+    box-shadow:
+        0 2px 7px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
+}
+
+
+/* Card Hover */
+
+.food-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =====================================================
+   BLOCK 7 : FOOD IMAGE
+   ===================================================== */
+
+.food-card img {
+    width: 100%;
+
+    height: 78px;
+
+    object-fit: cover;
+
+    border-radius: 5px;
+
+    margin-bottom: 5px;
+}
+
+
+/* =====================================================
+   BLOCK 8 : FOOD NAME
+   ===================================================== */
+
+.food-card h2 {
+    font-size: 13px;
+
+    margin-bottom: 5px;
+
+    color: #111111;
+}
+
+
+/* =====================================================
+   BLOCK 9 : PRICE
+   ===================================================== */
+
+.price {
+    color: #15803d;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+
+/* =====================================================
+   BLOCK 10 : ADD TO CART BUTTON
+   ===================================================== */
+
+.food-card button {
+    background-color: #ffc400;
+
+    color: #111111;
+
+    border: none;
+
+    border-radius: 5px;
+
+    padding: 7px 13px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+/* Button Hover */
+
+.food-card button:hover {
+    background-color: #e5aa00;
+
+    transform: scale(1.04);
+}
+
+
+/* Button Click */
+
+.food-card button:active {
+    transform: scale(0.97);
+}
+
+
+/* =====================================================
+   BLOCK 11 : FOOTER
+   ===================================================== */
+
+footer {
+    background-color: #151515;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 15px;
+
+    font-size: 13px;
+
+    width: 100%;
+}
+
+
+/* =====================================================
+   BLOCK 12 : TABLET
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    .food-container {
+        width: 90%;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+}
+
+
+/* =====================================================
+   BLOCK 13 : MOBILE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    /* Navbar */
+
+    .navbar {
+        height: auto;
+
+        padding: 12px 15px;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+
+    /* Logo */
+
+    .logo-section {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+
+    /* Navigation */
+
+    nav {
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+
+    nav a {
+        font-size: 12px;
+
+        padding: 10px 3px;
+    }
+
+
+    nav a.active::after {
+        bottom: 4px;
+    }
+
+
+    /* Search and Category */
+
+    .filters {
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+
+    .search-box {
+        width: 250px;
+    }
+
+
+    #categoryFilter {
+        width: 250px;
+    }
+
+
+    /* Food Cards */
+
+    .food-container {
+        width: 90%;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+}
+
+
+/* =====================================================
+   BLOCK 14 : SMALL MOBILE
+   ===================================================== */
+
+@media (max-width: 400px) {
+
+    .food-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    nav {
+        gap: 8px;
+    }
+
+
+    nav a {
+        font-size: 11px;
+    }
+
+
+    .menu-header h1 {
+        font-size: 22px;
+    }
+
+
+    .search-box {
+        width: 90%;
+    }
+
+
+    #categoryFilter {
+        width: 90%;
+    }
+
+}
+/* =====================================================
+   GENERAL
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: #ffffff;
+
+    color: #111111;
+}
+
+
+/* =====================================================
+   BLOCK 1 : NAVBAR
+   ===================================================== */
+
+.navbar {
+
+    height: 70px;
+
+    background-color: #151515;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 55px;
+
+    color: white;
+}
+
+
+/* Logo */
+
+.logo-section {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.logo {
+
+    font-size: 32px;
+
+    line-height: 1;
+}
+
+
+.logo-section h2 {
+
+    color: #ffc400;
+
+    font-size: 17px;
+
+    margin-bottom: 4px;
+}
+
+
+.logo-section p {
+
+    color: white;
+
+    font-size: 12px;
+}
+
+
+/* Navigation */
+
+nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 35px;
+}
+
+
+nav a {
+
+    position: relative;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    padding: 25px 5px;
+
+    transition: 0.3s;
+}
+
+
+nav a:hover {
+
+    color: #ffc400;
+}
+
+
+/* Active Cart */
+
+nav a.active {
+
+    color: #ffc400;
+}
+
+
+nav a.active::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: 16px;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 2px;
+
+    background-color: #ffc400;
+}
+
+
+/* =====================================================
+   CART COUNT
+   ===================================================== */
+
+#cartCount {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 19px;
+
+    height: 19px;
+
+    margin-left: 3px;
+
+    background-color: #f52232;
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 11px;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   BLOCK 2 : CART HEADER
+   ===================================================== */
+
+.cart-header {
+
+    text-align: center;
+
+    padding-top: 20px;
+
+    padding-bottom: 15px;
+}
+
+
+.cart-header h1 {
+
+    font-size: 25px;
+
+    margin-bottom: 8px;
+}
+
+
+.yellow-line {
+
+    width: 32px;
+
+    height: 3px;
+
+    background-color: #ffc400;
+
+    margin: auto;
+
+    border-radius: 5px;
+}
+
+
+/* =====================================================
+   BLOCK 3 : CART CONTAINER
+   ===================================================== */
+
+.cart-container {
+
+    width: 80%;
+
+    margin: 10px auto 50px;
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr;
+
+    gap: 25px;
+
+    align-items: start;
+}
+
+
+/* =====================================================
+   CART ITEMS
+   ===================================================== */
+
+.cart-items {
+
+    background-color: white;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 8px;
+
+    padding: 20px;
+}
+
+
+.cart-items > h2 {
+
+    font-size: 18px;
+
+    margin-bottom: 15px;
+
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+/* =====================================================
+   INDIVIDUAL CART ITEM
+   ===================================================== */
+
+.cart-item {
+
+    display: grid;
+
+    grid-template-columns: 1.5fr auto auto auto;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+.item-info h3 {
+
+    font-size: 14px;
+
+    margin-bottom: 5px;
+}
+
+
+.item-info p {
+
+    font-size: 12px;
+
+    color: #777777;
+}
+
+
+/* =====================================================
+   QUANTITY
+   ===================================================== */
+
+.quantity {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.quantity button {
+
+    width: 27px;
+
+    height: 27px;
+
+    border: 1px solid #dddddd;
+
+    background-color: white;
+
+    border-radius: 4px;
+
+    font-size: 17px;
+
+    cursor: pointer;
+}
+
+
+.quantity button:hover {
+
+    background-color: #ffc400;
+}
+
+
+.quantity span {
+
+    min-width: 20px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   ITEM TOTAL
+   ===================================================== */
+
+.item-total {
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    color: #15803d;
+
+    min-width: 60px;
+
+    text-align: right;
+}
+
+
+/* =====================================================
+   REMOVE BUTTON
+   ===================================================== */
+
+.remove-button {
+
+    border: none;
+
+    background-color: transparent;
+
+    color: #e11d48;
+
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+
+.remove-button:hover {
+
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   EMPTY CART
+   ===================================================== */
+
+#emptyCart {
+
+    display: none;
+
+    text-align: center;
+
+    padding: 35px 10px;
+
+    color: #777777;
+}
+
+
+#emptyCart p {
+
+    margin-bottom: 12px;
+
+    font-size: 14px;
+}
+
+
+#emptyCart a {
+
+    display: inline-block;
+
+    text-decoration: none;
+
+    background-color: #ffc400;
+
+    color: #111111;
+
+    padding: 9px 15px;
+
+    border-radius: 5px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   BLOCK 4 : ORDER SUMMARY
+   ===================================================== */
+
+.order-summary {
+
+    background-color: white;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 8px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+
+.order-summary h2 {
+
+    font-size: 18px;
+
+    margin-bottom: 20px;
+}
+
+
+/* Summary rows */
+
+.summary-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 14px;
+
+    font-size: 13px;
+
+    color: #555555;
+}
+
+
+/* Horizontal line */
+
+.order-summary hr {
+
+    border: none;
+
+    border-top: 1px solid #eeeeee;
+
+    margin: 15px 0;
+}
+
+
+/* Total */
+
+.total-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+
+.total-row span:last-child {
+
+    color: #15803d;
+}
+
+
+/* =====================================================
+   CHECKOUT BUTTON
+   ===================================================== */
+
+#checkoutButton {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background-color: #ffc400;
+
+    color: #111111;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+#checkoutButton:hover {
+
+    background-color: #e5aa00;
+}
+
+
+#checkoutButton:disabled {
+
+    background-color: #dddddd;
+
+    color: #888888;
+
+    cursor: not-allowed;
+}
+
+
+/* =====================================================
+   BLOCK 5 : FOOTER
+   ===================================================== */
+
+footer {
+
+    background-color: #151515;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 15px;
+
+    font-size: 13px;
+
+    width: 100%;
+}
+
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    .cart-container {
+
+        width: 90%;
+
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    .navbar {
+
+        height: auto;
+
+        padding: 12px 15px;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+
+    .logo-section {
+
+        width: 100%;
+
+        justify-content: center;
+    }
+
+
+    nav {
+
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+
+    nav a {
+
+        font-size: 12px;
+
+        padding: 10px 3px;
+    }
+
+
+    nav a.active::after {
+
+        bottom: 4px;
+    }
+
+
+    .cart-container {
+
+        width: 92%;
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .cart-item {
+
+        grid-template-columns: 1fr auto;
+
+        gap: 10px;
+    }
+
+
+    .item-total {
+
+        text-align: left;
+    }
+
+
+    .remove-button {
+
+        text-align: left;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+   ===================================================== */
+
+@media (max-width: 400px) {
+
+    nav {
+
+        gap: 8px;
+    }
+
+
+    nav a {
+
+        font-size: 11px;
+    }
+
+
+    .cart-items {
+
+        padding: 15px;
+    }
+
+
+    .order-summary {
+
+        padding: 15px;
+    }
+
+}
+/* =====================================================
+   CONTACT PAGE
+   ===================================================== */
+
+
+/* =====================================================
+   BLOCK 1 : CONTACT HEADER
+   ===================================================== */
+
+.contact-header {
+    text-align: center;
+
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+
+.contact-header h1 {
+    font-size: 25px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+
+/* Yellow line under heading */
+
+.yellow-line {
+    width: 32px;
+
+    height: 3px;
+
+    background-color: #ffc400;
+
+    margin: 0 auto;
+
+    border-radius: 5px;
+}
+
+
+/* =====================================================
+   BLOCK 2 : CONTACT CONTAINER
+   ===================================================== */
+
+.contact-container {
+    width: 75%;
+
+    margin: 10px auto 50px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+
+/* =====================================================
+   BLOCK 3 : CONTACT INFORMATION
+   ===================================================== */
+
+.contact-info {
+    padding: 10px;
+}
+
+
+/* Individual contact item */
+
+.contact-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 22px;
+}
+
+
+/* =====================================================
+   BLOCK 4 : CONTACT ICON
+   ===================================================== */
+
+.contact-icon {
+    width: 38px;
+
+    height: 38px;
+
+    min-width: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background-color: #ffc400;
+
+    border-radius: 50%;
+
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   BLOCK 5 : CONTACT TEXT
+   ===================================================== */
+
+.contact-item h3 {
+    font-size: 13px;
+
+    margin-bottom: 5px;
+
+    color: #111111;
+}
+
+
+.contact-item p {
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    color: #333333;
+}
+
+
+/* =====================================================
+   BLOCK 6 : CONTACT FORM
+   ===================================================== */
+
+.contact-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+/* Input fields */
+
+.contact-form input {
+    width: 100%;
+
+    height: 38px;
+
+    padding: 0 12px;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 5px;
+
+    outline: none;
+
+    font-size: 12px;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Input focus */
+
+.contact-form input:focus {
+    border-color: #ffc400;
+}
+
+
+/* =====================================================
+   BLOCK 7 : MESSAGE BOX
+   ===================================================== */
+
+.contact-form textarea {
+    width: 100%;
+
+    height: 100px;
+
+    padding: 12px;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 5px;
+
+    outline: none;
+
+    resize: vertical;
+
+    font-size: 12px;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Textarea focus */
+
+.contact-form textarea:focus {
+    border-color: #ffc400;
+}
+
+
+/* =====================================================
+   BLOCK 8 : SEND MESSAGE BUTTON
+   ===================================================== */
+
+.contact-form button {
+    width: 105px;
+
+    height: 34px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background-color: #ffc400;
+
+    color: #111111;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.contact-form button:hover {
+    background-color: #e5aa00;
+
+    transform: translateY(-1px);
+}
+
+
+.contact-form button:active {
+    transform: scale(0.97);
+}
+
+
+/* =====================================================
+   BLOCK 9 : CONTACT PAGE FOOTER
+   ===================================================== */
+
+footer {
+    background-color: #151515;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 15px;
+
+    font-size: 13px;
+
+    width: 100%;
+}
+
+
+/* =====================================================
+   BLOCK 10 : TABLET
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    .contact-container {
+        width: 85%;
+
+        gap: 30px;
+    }
+
+}
+
+
+/* =====================================================
+   BLOCK 11 : MOBILE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    .contact-container {
+        width: 90%;
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+        margin-bottom: 30px;
+    }
+
+
+    .contact-info {
+        padding: 0;
+    }
+
+
+    .contact-item {
+        margin-bottom: 18px;
+    }
+
+
+    .contact-form {
+        width: 100%;
+    }
+
+}
+
+
+/* =====================================================
+   BLOCK 12 : SMALL MOBILE
+   ===================================================== */
+
+@media (max-width: 400px) {
+
+    .contact-header h1 {
+        font-size: 22px;
+    }
+
+
+    .contact-icon {
+        width: 34px;
+
+        height: 34px;
+
+        min-width: 34px;
+
+        font-size: 15px;
+    }
+
+
+    .contact-item h3 {
+        font-size: 12px;
+    }
+
+
+    .contact-item p {
+        font-size: 11px;
+    }
+
+}

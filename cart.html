@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Madhan's Food - Cart</title>
+
+    <!-- Separate CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         BLOCK 1 : NAVBAR
+         ===================================================== -->
+
+    <header class="navbar">
+
+
+        <!-- Logo -->
+
+        <div class="logo-section">
+
+            <div class="logo">
+                🍔
+            </div>
+
+            <div>
+
+                <h2>
+                    Madhan's Food
+                </h2>
+
+                <p>
+                    Ordering Website
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="menu.html">
+                Menu
+            </a>
+
+            <a href="cart.html" class="active">
+
+                Cart
+
+                <span id="cartCount">
+                    0
+                </span>
+
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         BLOCK 2 : CART HEADING
+         ===================================================== -->
+
+    <section class="cart-header">
+
+        <h1>
+            Your Cart
+        </h1>
+
+        <div class="yellow-line"></div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BLOCK 3 : MAIN CART AREA
+         ===================================================== -->
+
+    <main class="cart-container">
+
+
+        <!-- =================================================
+             CART ITEMS
+             ================================================= -->
+
+        <section class="cart-items">
+
+            <h2>
+                Cart Items
+            </h2>
+
+
+            <!-- Items will be created by JavaScript -->
+
+            <div id="cartItems">
+
+                <!-- JavaScript will put products here -->
+
+            </div>
+
+
+            <!-- Empty cart message -->
+
+            <div id="emptyCart">
+
+                <p>
+                    Your cart is empty.
+                </p>
+
+                <a href="menu.html">
+                    Go to Menu
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             BLOCK 4 : ORDER SUMMARY
+             ================================================= -->
+
+        <section class="order-summary">
+
+            <h2>
+                Order Summary
+            </h2>
+
+
+            <!-- Subtotal -->
+
+            <div class="summary-row">
+
+                <span>
+                    Subtotal
+                </span>
+
+                <span id="subtotal">
+                    ₹0
+                </span>
+
+            </div>
+
+
+            <!-- Delivery -->
+
+            <div class="summary-row">
+
+                <span>
+                    Delivery
+                </span>
+
+                <span id="delivery">
+                    ₹40
+                </span>
+
+            </div>
+
+
+            <!-- Line -->
+
+            <hr>
+
+
+            <!-- Total -->
+
+            <div class="total-row">
+
+                <span>
+                    Total
+                </span>
+
+                <span id="total">
+                    ₹0
+                </span>
+
+            </div>
+
+
+            <!-- Checkout Button -->
+
+            <button
+                id="checkoutButton"
+                onclick="proceedToCheckout()">
+
+                Proceed to Checkout
+
+            </button>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         BLOCK 5 : FOOTER
+         ===================================================== -->
+
+    <footer>
+
+        © 2025 Madhan's Food Ordering Website.
+        All Rights Reserved.
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         BLOCK 6 : JAVASCRIPT
+         ===================================================== -->
+
+    <script>
+
+
+        // =================================================
+        // GET CART FROM LOCAL STORAGE
+        // =================================================
+
+        let cart =
+            JSON.parse(localStorage.getItem("cart")) || [];
+
+
+
+        // =================================================
+        // DISPLAY CART
+        // =================================================
+
+        function displayCart() {
+
+
+            // Get cart container
+
+            let cartItems =
+                document.getElementById("cartItems");
+
+
+            // Clear old content
+
+            cartItems.innerHTML = "";
+
+
+            // If cart is empty
+
+            if (cart.length === 0) {
+
+                document.getElementById("emptyCart").style.display =
+                    "block";
+
+                document.getElementById("checkoutButton").disabled =
+                    true;
+
+            }
+
+            else {
+
+                document.getElementById("emptyCart").style.display =
+                    "none";
+
+                document.getElementById("checkoutButton").disabled =
+                    false;
+
+            }
+
+
+            // Create every cart item
+
+            cart.forEach(function(item, index) {
+
+
+                let itemTotal =
+                    item.price * item.quantity;
+
+
+                cartItems.innerHTML += `
+
+                    <div class="cart-item">
+
+                        <div class="item-info">
+
+                            <h3>
+                                ${item.name}
+                            </h3>
+
+                            <p>
+                                ₹${item.price} each
+                            </p>
+
+                        </div>
+
+
+                        <div class="quantity">
+
+                            <button
+                                onclick="decreaseQuantity(${index})">
+                                −
+                            </button>
+
+
+                            <span>
+                                ${item.quantity}
+                            </span>
+
+
+                            <button
+                                onclick="increaseQuantity(${index})">
+                                +
+                            </button>
+
+                        </div>
+
+
+                        <div class="item-total">
+
+                            ₹${itemTotal}
+
+                        </div>
+
+
+                        <button
+                            class="remove-button"
+                            onclick="removeItem(${index})">
+
+                            Remove
+
+                        </button>
+
+                    </div>
+
+                `;
+
+            });
+
+
+            calculateTotal();
+
+        }
+
+
+
+        // =================================================
+        // INCREASE QUANTITY
+        // =================================================
+
+        function increaseQuantity(index) {
+
+            cart[index].quantity =
+                cart[index].quantity + 1;
+
+
+            saveCart();
+
+        }
+
+
+
+        // =================================================
+        // DECREASE QUANTITY
+        // =================================================
+
+        function decreaseQuantity(index) {
+
+
+            if (cart[index].quantity > 1) {
+
+                cart[index].quantity =
+                    cart[index].quantity - 1;
+
+            }
+
+            else {
+
+                cart.splice(index, 1);
+
+            }
+
+
+            saveCart();
+
+        }
+
+
+
+        // =================================================
+        // REMOVE ITEM
+        // =================================================
+
+        function removeItem(index) {
+
+            cart.splice(index, 1);
+
+            saveCart();
+
+        }
+
+
+
+        // =================================================
+        // SAVE CART
+        // =================================================
+
+        function saveCart() {
+
+            localStorage.setItem(
+                "cart",
+                JSON.stringify(cart)
+            );
+
+
+            displayCart();
+
+        }
+
+
+
+        // =================================================
+        // CALCULATE TOTAL
+        // =================================================
+
+        function calculateTotal() {
+
+
+            let subtotal = 0;
+
+
+            cart.forEach(function(item) {
+
+                subtotal =
+                    subtotal +
+                    (item.price * item.quantity);
+
+            });
+
+
+            let delivery = 40;
+
+
+            // If cart is empty, delivery is zero
+
+            if (cart.length === 0) {
+
+                delivery = 0;
+
+            }
+
+
+            let total =
+                subtotal + delivery;
+
+
+            document.getElementById("subtotal").innerHTML =
+                "₹" + subtotal;
+
+
+            document.getElementById("delivery").innerHTML =
+                "₹" + delivery;
+
+
+            document.getElementById("total").innerHTML =
+                "₹" + total;
+
+
+            // Update cart number
+
+            let count = 0;
+
+
+            cart.forEach(function(item) {
+
+                count =
+                    count + item.quantity;
+
+            });
+
+
+            document.getElementById("cartCount").innerHTML =
+                count;
+
+        }
+
+
+
+        // =================================================
+        // PROCEED TO CHECKOUT
+        // =================================================
+
+        function proceedToCheckout() {
+
+            if (cart.length === 0) {
+
+                alert("Your cart is empty!");
+
+                return;
+
+            }
+
+
+            window.location.href =
+                "checkout.html";
+
+        }
+
+
+
+        // =================================================
+        // DISPLAY CART WHEN PAGE LOADS
+        // =================================================
+
+        displayCart();
+
+
+    </script>
+
+</body>
+
+</html>

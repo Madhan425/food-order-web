@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Madhan's Food</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================================================= -->
+    <!-- BLOCK 1 : NAVBAR -->
+    <!-- ================================================= -->
+
+    <header class="navbar">
+
+        <div class="logo-section">
+
+            <div class="logo">
+                🍔
+            </div>
+
+            <div>
+
+                <h2>Madhan's Food</h2>
+
+                <p>Ordering Website</p>
+
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <a href="index.html"
+               class="active">
+                Home
+            </a>
+
+            <a href="menu.html">
+                Menu
+            </a>
+
+            <a href="cart.html">
+
+                Cart
+
+                <span id="cartCount">
+                    0
+                </span>
+
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ================================================= -->
+    <!-- BLOCK 2 : HERO -->
+    <!-- ================================================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h3>
+                Welcome to
+            </h3>
+
+            <h1>
+                Madhan's Food
+            </h1>
+
+            <h2>
+                Ordering Website
+            </h2>
+
+            <p>
+                Delicious food, delivered fast to your door.
+            </p>
+
+
+            <!-- ORDER NOW BLOCK -->
+
+            <button onclick="orderNow()">
+                ORDER NOW
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- BLOCK 3 : FEATURES -->
+    <!-- ================================================= -->
+
+    <section class="features">
+
+
+        <!-- FAST DELIVERY -->
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                🛵
+            </div>
+
+            <div>
+
+                <h3>
+                    Fast Delivery
+                </h3>
+
+                <p>
+                    On time delivery
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- BEST QUALITY -->
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                🏅
+            </div>
+
+            <div>
+
+                <h3>
+                    Best Quality
+                </h3>
+
+                <p>
+                    Fresh & delicious food
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SUPPORT -->
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                🎧
+            </div>
+
+            <div>
+
+                <h3>
+                    24/7 Support
+                </h3>
+
+                <p>
+                    We are here to help you
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- BLOCK 4 : FOOTER -->
+    <!-- ================================================= -->
+
+    <footer>
+
+        © 2025 Madhan's Food Ordering Website.
+        All Rights Reserved.
+
+    </footer>
+
+
+
+    <!-- ================================================= -->
+    <!-- BLOCK 5 : JAVASCRIPT -->
+    <!-- ================================================= -->
+
+    <script>
+
+
+        // ================= CART BLOCK =================
+
+        let cartCount =
+            localStorage.getItem("cartCount");
+
+
+        if (cartCount === null) {
+
+            cartCount = 0;
+
+        }
+
+
+        cartCount = Number(cartCount);
+
+
+        document.getElementById("cartCount").innerHTML =
+            cartCount;
+
+
+
+        // ================= ORDER NOW BLOCK =================
+
+        function orderNow() {
+
+            window.location.href = "menu.html";
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>
