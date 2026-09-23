@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -8,19 +8,27 @@ def home():
     return render_template("index.html")
 
 
-@app.route("/menu")
-def menu():
-    return render_template("menu.html")
+@app.route("/register", methods=["GET", "POST"])
+def register():
 
+    if request.method == "POST":
 
-@app.route("/cart")
-def cart():
-    return render_template("cart.html")
+        name = request.form["name"]
+        email = request.form["email"]
+        password = request.form["password"]
+        confirm_password = request.form["confirm_password"]
 
+        print("Name:", name)
+        print("Email:", email)
+        print("Password:", password)
+        print("Confirm Password:", confirm_password)
 
-@app.route("/contact")
-def contact():
-    return render_template("contact.html")
+        if password != confirm_password:
+            return "Passwords do not match"
+
+        return "Registration successful!"
+
+    return render_template("register.html")
 
 
 if __name__ == "__main__":
